@@ -1,0 +1,42 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.9">
+  <diagram name="Página-1" id="sIkxJiyonDzoH1DR97ap">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-uYZue6ZgbA6vSrJdVge-13" value="" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+          <mxGeometry x="215" y="210" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="-uYZue6ZgbA6vSrJdVge-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-uYZue6ZgbA6vSrJdVge-1" target="-uYZue6ZgbA6vSrJdVge-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-uYZue6ZgbA6vSrJdVge-1" value="Gerente" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry y="240" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-uYZue6ZgbA6vSrJdVge-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-uYZue6ZgbA6vSrJdVge-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="345" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-uYZue6ZgbA6vSrJdVge-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-uYZue6ZgbA6vSrJdVge-2" target="-uYZue6ZgbA6vSrJdVge-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-uYZue6ZgbA6vSrJdVge-2" value="Solicitar Consulta de Fornecedores" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="220" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-uYZue6ZgbA6vSrJdVge-4" value="Exibir Resultado da Consulta" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="295" y="360" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="-uYZue6ZgbA6vSrJdVge-6" value="Nome, telefone, e-mail, CNPJ, histórico de compras." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="230" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-uYZue6ZgbA6vSrJdVge-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-uYZue6ZgbA6vSrJdVge-9" target="-uYZue6ZgbA6vSrJdVge-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-uYZue6ZgbA6vSrJdVge-9" value="Histórico de fornecedores" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;" vertex="1" parent="1">
+          <mxGeometry x="295" y="100" width="100" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,39 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.0.2">
+  <diagram name="Página-1" id="TUyZQ9NzfmmX1hDXnCMf">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3mmbZALLiVTUP1HlKL6j-10" value="" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+          <mxGeometry x="260" y="150" width="250" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="3mmbZALLiVTUP1HlKL6j-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3mmbZALLiVTUP1HlKL6j-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3mmbZALLiVTUP1HlKL6j-1" value="Gerente" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="60" y="200" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3mmbZALLiVTUP1HlKL6j-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3mmbZALLiVTUP1HlKL6j-2" target="3mmbZALLiVTUP1HlKL6j-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3mmbZALLiVTUP1HlKL6j-2" value="Validar Dados do Produto" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+          <mxGeometry x="340" y="170" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="3mmbZALLiVTUP1HlKL6j-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3mmbZALLiVTUP1HlKL6j-3" target="3mmbZALLiVTUP1HlKL6j-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3mmbZALLiVTUP1HlKL6j-3" value="Registrar Produto no Sistema" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+          <mxGeometry x="340" y="290" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="3mmbZALLiVTUP1HlKL6j-4" value="nome, tipo, marca, validade, ano, código, quantidade, preço de compra e de venda" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="170" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3mmbZALLiVTUP1HlKL6j-8" value="Estoque" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="360" width="100" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

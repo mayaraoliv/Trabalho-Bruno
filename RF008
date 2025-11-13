@@ -1,0 +1,45 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.9">
+  <diagram name="Página-1" id="xKu7s4cnfNoN5ITMpOpT">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Q17LD8e2JRAG6lxYslOD-11" value="" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+          <mxGeometry x="210" y="50" width="290" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="Q17LD8e2JRAG6lxYslOD-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q17LD8e2JRAG6lxYslOD-1" target="Q17LD8e2JRAG6lxYslOD-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q17LD8e2JRAG6lxYslOD-1" value="Gerente" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="200" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Q17LD8e2JRAG6lxYslOD-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q17LD8e2JRAG6lxYslOD-3" target="Q17LD8e2JRAG6lxYslOD-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q17LD8e2JRAG6lxYslOD-3" value="Coletar Histórico de Compras" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="185" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q17LD8e2JRAG6lxYslOD-4" value="Identificar Clientes Frequentes" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="60" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q17LD8e2JRAG6lxYslOD-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q17LD8e2JRAG6lxYslOD-5" target="Q17LD8e2JRAG6lxYslOD-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="170" />
+              <mxPoint x="390" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q17LD8e2JRAG6lxYslOD-5" value="&lt;span data-start=&quot;355&quot; data-end=&quot;393&quot;&gt;Gerar Relatório de Fidelização&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="185" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Q17LD8e2JRAG6lxYslOD-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Q17LD8e2JRAG6lxYslOD-6" target="Q17LD8e2JRAG6lxYslOD-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q17LD8e2JRAG6lxYslOD-6" value="Vendas registradas" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="350" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

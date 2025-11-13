@@ -1,0 +1,103 @@
+solicitação-relatório-financeiro =
+    * Pedido do gerente para consultar ou gerar o relatório financeiro mensal *
+    id-gerente + período-consulta + tipo-relatório
+
+id-gerente =
+    * Identificador do gerente solicitante *
+    @id-usuário
+
+período-consulta =
+    * Intervalo de tempo referente ao relatório financeiro solicitado *
+    mês + ano
+
+mês =
+    * Mês de referência do relatório *
+    [“01”..“12”]
+
+ano =
+    * Ano de referência do relatório *
+    [“2000”..“2100”]
+
+tipo-relatório =
+    * Tipo de relatório financeiro solicitado *
+    [“Mensal” | “Trimestral” | “Anual”]
+
+consulta-financeira =
+    * Processo interno que consolida entradas, saídas e custos no período *
+    {movimentação-financeira}
+
+movimentação-financeira =
+    * Registro financeiro que compõe o relatório *
+    @id-movimentação + data-movimentação + tipo-movimentação + valor + descrição + origem
+
+id-movimentação =
+    * Identificador único da movimentação financeira *
+    número-inteiro
+
+data-movimentação =
+    * Data da transação *
+    dd + "/" + mm + "/" + aaaa
+
+tipo-movimentação =
+    * Natureza da movimentação financeira *
+    [“Entrada” | “Saída” | “Despesa” | “Custo” | “Lucro”]
+
+valor =
+    * Quantia monetária da movimentação *
+    número-decimal
+
+descrição =
+    * Detalhamento textual da movimentação *
+    {caractere-válido}
+
+origem =
+    * Origem do dado financeiro (ex: venda, compra, despesa fixa) *
+    [“Venda” | “Compra” | “Conta Fixa” | “Reposição de Estoque” | “Outro”]
+
+relatório-financeiro =
+    * Documento consolidado com os cálculos financeiros do período *
+    período-consulta + total-entradas + total-saídas + custo-produtos + lucro-bruto + despesas + lucro-líquido
+
+total-entradas =
+    * Soma total das receitas do período (ex: vendas, devoluções positivas) *
+    Σ(valor) onde tipo-movimentação = “Entrada”
+
+total-saídas =
+    * Soma total das despesas e retiradas do período *
+    Σ(valor) onde tipo-movimentação = “Saída”
+
+custo-produtos =
+    * Soma dos valores de aquisição dos produtos vendidos *
+    Σ(valor) onde origem = “Compra” ou “Reposição de Estoque”
+
+lucro-bruto =
+    * Diferença entre total de entradas e custo dos produtos *
+    total-entradas - custo-produtos
+
+despesas =
+    * Total de gastos fixos e variáveis do período *
+    Σ(valor) onde tipo-movimentação = “Despesa”
+
+lucro-líquido =
+    * Resultado final após subtrair as despesas do lucro bruto *
+    lucro-bruto - despesas
+
+resumo-financeiro =
+    * Estrutura agregada para visualização simplificada *
+    período-consulta + lucro-líquido + lucro-bruto + total-entradas + total-saídas
+
+alerta-financeiro =
+    * Indicador de desempenho financeiro gerado automaticamente *
+    [“Lucro” | “Prejuízo”]
+
+BD_financeiro =
+    * Banco de dados que armazena as movimentações financeiras diárias e mensais *
+    {@id-movimentação + data-movimentação + tipo-movimentação + valor + descrição + origem + id-usuário}
+
+Compras registradas =
+    * Banco de dados relacionado, usado para cálculo de compra de produtos *
+    {@id-produto + nome-produto + custo-unitário + quantidade-comprada}
+
+Vendas registradas=
+    * Banco de dados que registra todas as vendas realizadas *
+    {@id-venda + data-venda + valor-total + método-pagamento + id-cliente + id-funcionário}

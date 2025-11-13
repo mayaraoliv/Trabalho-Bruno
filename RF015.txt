@@ -1,0 +1,109 @@
+solicitação-consulta-estoque =
+    * Requisição feita por qualquer usuário autorizado para consultar informações do estoque *
+    id-usuario + tipo-consulta + filtros-consulta
+
+id-usuario =
+    * Identificador do usuário autenticado *
+    @id-usuario
+
+tipo-consulta =
+    * Tipo de informação desejada pelo usuário *
+    ["Geral" | "Entradas" | "Saídas" | "Sessões" | "Armazenamento"]
+
+filtros-consulta =
+    * Filtros opcionais usados na consulta *
+    [por-produto | por-data | por-sessão | por-tipo-movimentação]
+
+por-produto =
+    * Filtro por produto específico *
+    id-produto
+
+por-data =
+    * Filtro de movimentações por intervalo de datas *
+    data-inicial + data-final
+
+por-sessão =
+    * Filtro por seção de armazenamento (ex: Bebidas, Limpeza) *
+    sessão
+
+por-tipo-movimentação =
+    * Filtro por tipo de movimentação (entrada ou saída) *
+    ["Entrada" | "Saída"]
+
+data-inicial =
+    * Data inicial do intervalo de pesquisa *
+    dd + "/" + mm + "/" + aaaa
+
+data-final =
+    * Data final do intervalo de pesquisa *
+    dd + "/" + mm + "/" + aaaa
+
+resultado-consulta-estoque =
+    * Dados consolidados retornados ao usuário com informações do estoque *
+    {id-produto + nome-produto + categoria + quantidade-atual + seção + destino + tipo-movimentação + data-movimentação + responsável}
+
+id-produto =
+    * Código identificador do produto *
+    @id-produto
+
+nome-produto =
+    * Nome comercial do produto *
+    texto
+
+categoria =
+    * Categoria à qual o produto pertence *
+    texto
+
+quantidade-atual =
+    * Quantidade disponível no estoque após a última movimentação *
+    número-inteiro (≥ 0)
+
+tipo-movimentação =
+    * Tipo de movimentação registrada *
+    ["Entrada" | "Saída"]
+
+data-movimentação =
+    * Data da movimentação registrada *
+    dd + "/" + mm + "/" + aaaa + " " + hh + ":" + mm
+
+seção =
+    * Local ou setor em que o produto está armazenado *
+    ["Bebidas" | "Comidas" | "Doces" | "Higiene" | "Limpeza" | "Outros"]
+
+destino =
+    * Indica se o produto está armazenado na Loja ou no Estoque Central *
+    ["Loja" | "Estoque"]
+
+relatorio-estoque =
+    * Documento ou visualização gerada a partir da consulta *
+    período-consulta + total-produtos + entradas + saídas + produtos-por-seção + observações
+
+total-produtos =
+    * Quantidade total de produtos registrados no estoque *
+    número-inteiro
+
+entradas =
+    * Total de produtos que entraram no período analisado *
+    Σ(quantidade) onde tipo-movimentação = "Entrada"
+
+saídas =
+    * Total de produtos que saíram no período analisado *
+    Σ(quantidade) onde tipo-movimentação = "Saída"
+
+produtos-por-seção =
+    * Agrupamento de produtos conforme seção e destino *
+    {seção + destino + total-produtos}
+
+observações =
+    * Notas adicionais geradas pelo sistema (ex: produto com saldo negativo ou inativo) *
+    {texto}
+
+Estoque =
+    * Base principal com informações de quantidades e status de produtos *
+    {@id-produto + nome-produto + quantidade-atual + categoria + unidade-medida + data-atualizacao}
+
+número-inteiro =
+    [0-9]+
+
+texto =
+    [A-Z | a-z | 0-9 | espaço | _ | - | . | ,]

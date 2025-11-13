@@ -1,0 +1,89 @@
+solicitação-reposição =
+    * Requisição do gerente para visualizar produtos com baixo estoque *
+    id-gerente + tipo-consulta + filtros-reposição
+
+id-gerente =
+    * Identificador do gerente autenticado no sistema *
+    @id-usuario
+
+tipo-consulta =
+    * Tipo de visualização solicitada pelo gerente *
+    ["PorProduto" | "PorCategoria" | "Geral" | "Crítico"]
+
+filtros-reposição =
+    * Parâmetros opcionais usados para refinar a consulta *
+    [categoria | fornecedor | faixa-estoque | data-atualizacao]
+
+categoria =
+    * Categoria dos produtos a serem consultados *
+    texto
+
+fornecedor =
+    * Nome ou código do fornecedor relacionado ao produto *
+    texto
+
+faixa-estoque =
+    * Intervalo numérico usado para filtrar produtos por quantidade *
+    quantidade-minima + quantidade-maxima
+
+quantidade-minima =
+    * Valor mínimo de estoque desejado para a consulta *
+    número-inteiro (≥ 0)
+
+quantidade-maxima =
+    * Valor máximo de estoque desejado para a consulta *
+    número-inteiro (≥ quantidade-minima)
+
+data-atualizacao =
+    * Data da última atualização do estoque a ser considerada *
+    dd + "/" + mm + "/" + aaaa
+
+análise-reposição =
+    * Resultado consolidado retornado ao gerente contendo a análise de estoque atual *
+    {id-produto + nome-produto + categoria + quantidade-atual + quantidade-minima + status-reposição + recomendação}
+
+id-produto =
+    * Identificador único do produto consultado *
+    @id-produto
+
+nome-produto =
+    * Nome comercial do produto *
+    texto
+
+quantidade-atual =
+    * Quantidade presente no estoque no momento da consulta *
+    número-inteiro (≥ 0)
+
+quantidade-minima =
+    * Quantidade mínima necessária para não haver ruptura de estoque *
+    número-inteiro (≥ 0)
+
+status-reposição =
+    * Situação atual do produto em relação à necessidade de reposição *
+    ["Normal" | "Atenção" | "Crítico"]
+
+Estoque =
+    * Base de dados principal com informações cadastrais dos produtos *
+    {@id-produto + nome-produto + descrição + categoria + fornecedor + status}
+
+Compras registrada =
+    * Base de dados com histórico de pedidos de compra e reposições já realizadas *
+    {@id-compra + id-produto + data-compra + quantidade-comprada + fornecedor + status-compra}
+
+relatorio-reposição =
+    * Documento ou tela gerada pelo sistema com o resultado da análise *
+    período-consulta + análise-reposição + resumo-quantitativo + recomendações-gerais
+
+total-produtos =
+    * Quantidade total de produtos registrados no estoque *
+    número-inteiro
+
+produtos-em-falta =
+    * Quantidade de produtos abaixo da quantidade mínima *
+    número-inteiro
+
+número-inteiro =
+    [0-9]+
+
+texto =
+    [A-Z | a-z | 0-9 | espaço | _ | - | . | ,]

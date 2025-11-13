@@ -1,0 +1,89 @@
+solicitação-promocao =
+    * Requisição do Gerente para cadastrar, alterar ou remover uma promoção *
+    id-gerente + tipo-operacao + dados-promocao
+
+id-gerente =
+    * Identificador do gerente autenticado *
+    @id-usuario
+
+tipo-operacao =
+    * Tipo de ação solicitada na promoção *
+    ["Cadastrar" | "Editar" | "Remover" | "Listar"]
+
+dados-promocao =
+    * Informações completas sobre a promoção do produto *
+    id-promocao + id-produto + valor-original + valor-promocional + data-inicio + data-fim + status-promocao
+
+id-promocao =
+    * Código identificador único da promoção *
+    @id-promocao
+
+id-produto =
+    * Identificador do produto associado à promoção *
+    @id-produto
+
+valor-original =
+    * Preço original do produto antes da promoção *
+    número-decimal (≥ 0)
+
+valor-promocional =
+    * Novo valor aplicado durante o período da promoção *
+    número-decimal (≥ 0, menor que valor-original)
+
+data-inicio =
+    * Data em que a promoção começa a valer *
+    dd + "/" + mm + "/" + aaaa
+
+data-fim =
+    * Data em que a promoção expira *
+    dd + "/" + mm + "/" + aaaa
+
+status-promocao =
+    * Situação atual da promoção *
+    ["Ativa" | "Expirada" | "Agendada" | "Cancelada"]
+
+percentual-desconto =
+    * Valor percentual de desconto aplicado *
+    ((valor-original - valor-promocional) / valor-original) * 100
+
+periodo-promocao =
+    * Intervalo de validade da promoção *
+    data-inicio + data-fim
+
+registro-promocao =
+    * Estrutura armazenada no BD contendo informações da promoção *
+    id-promocao + id-produto + valor-original + valor-promocional + data-inicio + data-fim + status-promocao
+
+Estoque =
+    * Base de dados que contém os produtos disponíveis para aplicar promoções *
+    {@id-produto + nome-produto + descricao + preco + categoria + quantidade-estoque}
+
+confirmação-promocao =
+    * Mensagem de retorno do sistema informando o sucesso ou falha da operação *
+    ["Promoção cadastrada com sucesso" | "Erro ao cadastrar" | "Promoção alterada" | "Promoção removida"]
+
+relatorio-promocoes =
+    * Listagem de promoções vigentes, expiradas ou futuras, com informações resumidas *
+    {id-promocao + nome-produto + valor-original + valor-promocional + percentual-desconto + data-fim + status-promocao}
+
+criterios-busca =
+    * Parâmetros opcionais usados na listagem e controle das promoções *
+    [por-data | por-produto | por-status]
+
+por-data =
+    * Filtro de promoções por período de validade *
+    data-inicio + data-fim
+
+por-produto =
+    * Filtro de promoções por produto específico *
+    id-produto
+
+por-status =
+    * Filtro de promoções por status atual *
+    status-promocao
+
+número-decimal =
+    [0-9]+("." [0-9]+)
+
+texto =
+    [A-Z | a-z | 0-9 | espaço | _ | - | . | ,]

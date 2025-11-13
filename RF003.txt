@@ -1,0 +1,61 @@
+dados-produto =
+    * Informações fornecidas pelo gerente para cadastrar um novo produto *
+    nome-produto + tipo + marca + validade + ano + código + quantidade + preço + fornecedor
+
+nome-produto =
+    * Nome comercial que identifica o produto no sistema *
+    {caractere-válido}
+
+tipo =
+    * Categoria ou natureza do produto *
+    [“Alimentício” | “Bebida” | “Higiene” | “Outros”]
+
+marca =
+    * Fabricante ou marca comercial do produto *
+    {caractere-válido}
+
+validade =
+    * Data de expiração do produto *
+    dd + "/" + mm + "/" + aaaa
+
+ano =
+    * Ano de fabricação ou referência do produto *
+    [0-9]{4}
+
+código =
+    * Identificador único do produto *
+    @id-produto
+
+quantidade =
+    * Número de unidades disponíveis do produto *
+    [0-9]+
+
+preço =
+    * Valor monetário unitário do produto *
+    número-decimal
+
+fornecedor =
+    * Entidade responsável pelo fornecimento do produto *
+    nome-fornecedor + contato-fornecedor
+
+nome-fornecedor =
+    * Nome da empresa fornecedora do produto *
+    {caractere-válido}
+
+contato-fornecedor =
+    * Telefone ou e-mail do fornecedor *
+    [telefone | e-mail]
+
+registro-produto =
+    * Conjunto de informações armazenadas no banco de dados após validação *
+    @id-produto + nome-produto + tipo + marca + validade + ano + quantidade + preço + fornecedor
+
+Estoque =
+    * Armazenamento que contém todos os produtos cadastrados no sistema *
+    {@id-produto + nome-produto + tipo + marca + validade + ano + quantidade + preço + fornecedor}
+
+caractere-válido =
+    [A-Z | a-z | 0-9 | _ | . | -]
+
+número-decimal =
+    [0-9]+("." [0-9]+)
