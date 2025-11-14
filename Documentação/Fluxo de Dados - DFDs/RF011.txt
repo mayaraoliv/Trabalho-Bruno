@@ -1,0 +1,105 @@
+solicitação-consulta-capital =
+    * Pedido do Gerente para obter indicadores e valores relacionados ao capital de giro *
+    id-gerente + período-consulta + tipo-indicador
+
+id-gerente =
+    * Identificador do gerente solicitante *
+    @id-usuário
+
+período-consulta =
+    * Intervalo de tempo para cálculo/consulta do capital *
+    data-inicial + data-final
+
+data-inicial =
+    * Data de início do período de análise *
+    dd + "/" + mm + "/" + aaaa
+
+data-final =
+    * Data de fim do período de análise *
+    dd + "/" + mm + "/" + aaaa
+
+consulta-capital =
+    * Resultado consolidado retornado ao gerente com valores e indicadores do período *
+    período-consulta + ativo-circulante + passivo-circulante + capital-giro + indicadores + observações
+
+ativo-circulante =
+    * Soma de ativos de curto prazo (caixa, estoques, contas a receber, etc.) *
+    Σ(valor) onde natureza = “AtivoCirculante”
+
+passivo-circulante =
+    * Soma de obrigações de curto prazo (fornecedores, dívidas, contas a pagar, etc.) *
+    Σ(valor) onde natureza = “PassivoCirculante”
+
+capital-giro =
+    * Valor disponível como diferença entre ativo circulante e passivo circulante *
+    ativo-circulante - passivo-circulante
+
+estoque =
+    * Valor total em estoque usado no cálculo de NCG *
+    Σ(custo-unitário * quantidade-disponível)
+
+contas-a-receber =
+    * Soma dos valores a receber no período relevante *
+    Σ(valor-fatura - recebimentos)
+
+fornecedores =
+    * Soma dos valores de fornecedores a pagar (curto prazo) *
+    Σ(valor-fatura - pagamentos)
+
+indicadores =
+    * Conjunto de indicadores financeiros calculados para análise do capital *
+    {indice-liquidez-corrente + prazo-médio-recebimento + prazo-médio-pagamento + giro-de-estoque}
+
+indice-liquidez-corrente =
+    * Razão entre ativo circulante e passivo circulante *
+    ativo-circulante / passivo-circulante
+
+prazo-médio-recebimento =
+    * Média ponderada em dias para recebimento das vendas a prazo *
+    número-decimal (dias)
+
+prazo-médio-pagamento =
+    * Média ponderada em dias para pagamento a fornecedores *
+    número-decimal (dias)
+
+giro-de-estoque =
+    * Quantas vezes o estoque é renovado no período *
+    custo-vendas / estoque-médio
+
+custo-vendas =
+    * Soma do custo dos produtos vendidos no período *
+    Σ(custo-unitário * quantidade-vendida)
+
+estoque-médio =
+    * Média de estoque no período (inicial + final) / 2 *
+    número-decimal
+
+observações =
+    * Notas ou alertas gerados pelo sistema *
+    {texto}
+
+Compras registradas =
+    * Base que armazena todas as movimentações financeiras, receitas e despesas *
+    {@id-movimentação + data + tipo-movimentação + valor + descrição + origem + centro-custo}
+
+Vendas registradas =
+    * Base com registros de vendas usadas para calcular entradas e custo das vendas *
+    {@id-venda + data-venda + id-cliente + itens + valor-total + custo-total}
+
+
+relatório-capital =
+    * Documento/result-set exportável com os valores e indicadores calculados *
+    período-consulta + capital-giro + {indicadores} + recomendações
+
+recomendações =
+    * Ações sugeridas pelo sistema baseadas nos indicadores (ex.: reduzir estoque, renegociar prazos) *
+    [“Reduzir Estoque” | “Renegociar Fornecedores” | “Aumentar Recebimento” | “Reforçar Caixa” | “Nenhuma”]
+
+número-decimal =
+    [0-9]+("." [0-9]+)
+
+número-inteiro =
+    [0-9]+
+
+caractere-válido =
+    [A-Z | a-z | 0-9 | _ | . | - | espaço]

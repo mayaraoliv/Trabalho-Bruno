@@ -1,0 +1,50 @@
+dados-entrega =
+    * Informações referentes à entrega do pedido ao cliente *
+    código-compra + data-entrega + status-entrega + tipo-entrega + entregador
+
+código-compra =
+    * Identificador único da compra associada à entrega *
+    @id-compra
+
+data-entrega =
+    * Data em que a entrega foi realizada *
+    dd + "/" + mm + "/" + aaaa
+
+status-entrega =
+    * Situação atual da entrega *
+    [“Pendente” | “Em trânsito” | “Entregue” | “Cancelada”]
+
+tipo-entrega =
+    * Forma como a entrega foi executada *
+    [“Interna” | “Terceirizada”]
+
+entregador =
+    * Pessoa ou empresa responsável pela entrega *
+    nome-entregador + contato-entregador
+
+nome-entregador =
+    * Nome do funcionário ou da transportadora que realizou a entrega *
+    {caractere-válido}
+
+contato-entregador =
+    * Telefone ou e-mail de contato do entregador *
+    [telefone | e-mail]
+
+confirmação-entrega =
+    * Mensagem exibida ao atendente após o registro da entrega *
+    [“Entrega confirmada com sucesso” | “Erro ao confirmar entrega” | “Compra não encontrada”]
+
+registro-entrega =
+    * Dados gravados no banco de dados após a confirmação da entrega *
+    @id-entrega + código-compra + data-entrega + tipo-entrega + entregador + status-entrega
+
+Entregas registradas =
+    * Base de dados que armazena todas as informações das entregas realizadas *
+    {@id-entrega + código-compra + data-entrega + tipo-entrega + entregador + status-entrega}
+
+atualização-entrega =
+    * Fluxo de dados que representa a atualização automática do status de entrega de uma compra *
+    código-compra + status-entrega
+
+caractere-válido =
+    [A-Z | a-z | 0-9 | _ | . | - | espaço]

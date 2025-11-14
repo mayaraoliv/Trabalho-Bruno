@@ -1,0 +1,101 @@
+solicitação-consulta-vencimento =
+    * Pedido do Estoquista/Gerente para listar produtos com validade próxima *
+    id-solicitante + filtro-período + tipo-alerta-solicitado
+
+id-solicitante =
+    * Identificador do usuário que solicita a consulta *
+    @id-usuário
+
+filtro-período =
+    * Período (em dias) usado para identificar proximidade de vencimento *
+    dias-antecedência
+
+dias-antecedência =
+    * Número de dias antes da data de validade para considerar um produto "próximo ao vencimento" *
+    número-inteiro
+
+tipo-alerta-solicitado =
+    * Tipo de alerta desejado pelo solicitante *
+    [“AlertaLeve” | “AlertaMédio” | “AlertaCrítico” | “Todos”]
+
+consulta-produtos-próximos =
+    * Resultado da busca realizada pelo sistema filtrando produtos que atendem ao critério de vencimento *
+    {produto-vencimento}
+
+produto-vencimento =
+    * Registro descritivo do produto com informações de lote/validade e estado de aviso *
+    @id-produto + nome-produto + lote + validade + quantidade + dias-para-vencimento + tipo-alerta + status-estoque
+
+nome-produto =
+    * Nome comercial do produto *
+    {caractere-válido}
+
+lote =
+    * Código do lote do produto *
+    {caractere-válido}
+
+validade =
+    * Data de validade do lote *
+    dd + "/" + mm + "/" + aaaa
+
+quantidade =
+    * Quantidade disponível do lote no estoque *
+    número-inteiro
+
+data-atual =
+    * Data corrente utilizada para cálculo de dias-para-vencimento *
+    dd + "/" + mm + "/" + aaaa
+
+dias-para-vencimento =
+    * Número de dias entre a data atual e a data de validade (pode ser negativo se já vencido) *
+    número-inteiro
+
+tipo-alerta =
+    * Categoria de alerta derivada do tempo até a validade *
+    [“AlertaLeve” | “AlertaMédio” | “AlertaCrítico” | “Vencido”]
+
+status-estoque =
+    * Indicação de disponibilidade para venda/remoção *
+    [“Disponível” | “Reservado” | “Esgotado”]
+
+relatório-vencimento =
+    * Documento gerado contendo os produtos filtrados e indicações de ação *
+    data-geração + {produto-vencimento} + recomendação-ação
+
+recomendação-ação =
+    * Sugestão automática do sistema baseada no tipo_alerta e quantidade *
+    [“Promover Venda” | “Descarte” | “Devolver ao Fornecedor” | “Transferir” | “Nenhuma Ação”]
+
+Estoque =
+    * Base de dados contendo lotes e quantidades armazenadas com validade por lote *
+    {@id-estoque + @id-produto + lote + validade + quantidade + localização}
+
+parametros-alerta =
+    * Valores limites configuráveis que definem os intervalos de alerta *
+    limite-leve + limite-médio + limite-crítico
+
+limite-leve =
+    * Ex.: 90 dias (configurável) — aciona AlertaLeve se dias-para-vencimento <= limite-leve *
+    número-inteiro
+
+limite-médio =
+    * Ex.: 30 dias — aciona AlertaMédio se dias-para-vencimento <= limite-médio *
+    número-inteiro
+
+limite-crítico =
+    * Ex.: 7 dias — aciona AlertaCrítico se dias-para-vencimento <= limite-crítico *
+    número-inteiro
+
+atualização-estoque-pos-consulta =
+    * Fluxo opcional que atualiza flags no estoque após ação do usuário (ex: bloquear lote) *
+    @id-estoque + ação + nova-quantidade + timestamp
+
+timestamp =
+    * Marca temporal das operações *
+    dd + "/" + mm + "/" + aaaa + " " + hh + ":" + mm + ":" + ss
+
+número-inteiro =
+    [0-9]+
+
+caractere-válido =
+    [A-Z | a-z | 0-9 | _ | . | - | espaço]

@@ -1,0 +1,45 @@
+dados-pagamento =
+    * Informações fornecidas pelo atendente para registrar o pagamento de uma compra *
+    código-compra + valor-total + forma-pagamento + data-pagamento
+
+código-compra =
+    * Identificador único da compra a ser paga *
+    @id-compra
+
+valor-total =
+    * Valor total da compra que será quitado *
+    número-decimal
+
+forma-pagamento =
+    * Método utilizado para o pagamento da compra *
+    [“Dinheiro” | “Cartão” | “Pix” | “Outro”]
+
+data-pagamento =
+    * Data em que o pagamento foi realizado *
+    dd + "/" + mm + "/" + aaaa
+
+confirmação-pagamento =
+    * Mensagem retornada ao atendente após o registro do pagamento *
+    [“Pagamento registrado com sucesso” | “Erro no registro do pagamento” | “Compra não encontrada”]
+
+registro-pagamento =
+    * Conjunto de informações registradas no banco de dados após o pagamento ser efetuado *
+    @id-pagamento + código-compra + valor-total + forma-pagamento + data-pagamento
+
+Vendas registradas =
+    * Armazenamento contendo os registros de todas as vendas realizadas *
+    {@id-compra + nome-cliente + telefone + {item-compra} + forma-pagamento + valor-total}
+
+atualização-financeira =
+    * Fluxo de dados que representa a atualização do caixa após o registro do pagamento *
+    tipo-transação + valor + data + forma-pagamento
+
+tipo-transação =
+    * Indica se a movimentação é uma entrada ou saída de dinheiro *
+    [“Entrada” | “Saída”]
+
+número-decimal =
+    [0-9]+("." [0-9]+)
+
+caractere-válido =
+    [A-Z | a-z | 0-9 | _ | . | - | espaço]

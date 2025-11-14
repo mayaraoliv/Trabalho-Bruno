@@ -1,0 +1,46 @@
+dados-funcionário =
+    * Informações fornecidas pelo gerente para cadastrar um novo funcionário *
+    nome + e-mail + senha + cpf + função
+
+nome =
+    * Nome completo do funcionário *
+    {caractere-válido}
+
+e-mail =
+    * Endereço eletrônico único de identificação do funcionário *
+    {caractere-válido} + "@" + domínio
+
+senha =
+    * Código secreto utilizado para autenticação do funcionário *
+    {caractere-válido}
+
+cpf =
+    * Cadastro de Pessoa Física utilizado como identificador único *
+    [0-9]{11}
+
+função =
+    * Cargo ou papel desempenhado pelo funcionário dentro da empresa *
+    [“Gerente” | “Atendente” | “Estoquista” | “Outro”]
+
+dados-validados =
+    * Dados do funcionário que passaram pela verificação de consistência *
+    nome + e-mail + senha + cpf + função
+
+registro-funcionário =
+    * Conjunto de informações gravadas no banco de dados *
+    @id-funcionário + nome + e-mail + senha + cpf + função
+
+confirmação-cadastro =
+    * Mensagem retornada ao gerente após tentativa de cadastro *
+    [“Cadastro realizado com sucesso” | “Erro: CPF duplicado” | “Erro: e-mail já existente” | “Campos obrigatórios faltando”]
+
+Funcionários registrados =
+    * Armazenamento contendo os registros de todos os funcionários do sistema *
+    {@id-funcionário + nome + e-mail + senha + cpf + função}
+
+domínio =
+    * Parte final do e-mail que identifica o provedor *
+    {caractere-válido} + "." + extensão
+
+caractere-válido =
+    [A-Z | a-z | 0-9 | _ | . | -]

@@ -1,0 +1,83 @@
+dados-analise-clientes =
+    * Dados utilizados para analisar a frequência e comportamento dos clientes *
+    nome-cliente + {registro-compra} + frequência-compras + valor-médio + preferências
+
+nome-cliente =
+    * Nome completo do cliente cadastrado no sistema *
+    {caractere-válido}
+
+registro-compra =
+    * Cada compra realizada por um cliente *
+    código-compra + data-compra + valor-total + {item-compra}
+
+código-compra =
+    * Identificador único da compra *
+    @id-compra
+
+data-compra =
+    * Data em que a compra foi efetuada *
+    dd + "/" + mm + "/" + aaaa
+
+valor-total =
+    * Valor total pago pelo cliente na compra *
+    número-decimal
+
+item-compra =
+    * Produto adquirido na compra *
+    código-produto + nome-produto + quantidade + valor-unitário
+
+código-produto =
+    * Identificador único do produto comprado *
+    @id-produto
+
+nome-produto =
+    * Nome do produto comprado *
+    {caractere-válido}
+
+quantidade =
+    * Quantidade de unidades compradas *
+    número-inteiro
+
+valor-unitário =
+    * Preço por unidade do produto *
+    número-decimal
+
+frequência-compras =
+    * Quantidade de compras realizadas pelo cliente em um período determinado *
+    número-inteiro
+
+valor-médio =
+    * Média de gasto por compra do cliente *
+    número-decimal
+
+preferências =
+    * Produtos ou categorias mais compradas pelo cliente *
+    {tipo-preferido}
+
+tipo-preferido =
+    [“Bebida” | “Alimentício” | “Higiene” | “Outro”]
+
+resultado-análise =
+    * Informações processadas e apresentadas ao gerente *
+    nome-cliente + frequência-compras + valor-médio + preferências
+
+relatório-clientes-frequentes =
+    * Conjunto de dados resultantes da análise de todos os clientes *
+    {resultado-análise}
+
+BD_clientes =
+    * Base de dados com os dados cadastrais dos clientes *
+    {@id-cliente + nome-cliente + telefone + e-mail + cpf}
+
+BD_compras =
+    * Base de dados com o histórico de compras realizadas por cada cliente *
+    {@id-compra + id-cliente + data-compra + valor-total + {item-compra}}
+
+número-decimal =
+    [0-9]+("." [0-9]+)
+
+número-inteiro =
+    [0-9]+
+
+caractere-válido =
+    [A-Z | a-z | 0-9 | _ | . | - | espaço]

@@ -1,0 +1,38 @@
+e-mail-e-senha =
+    * Dados informados pelo usuário para autenticação no sistema *
+    e-mail + senha
+
+e-mail =
+    * Endereço eletrônico único de identificação do usuário *
+    {caractere-válido} + "@" + domínio
+
+senha =
+    * Código secreto utilizado para autenticação do usuário *
+    {caractere-válido}
+
+credenciais =
+    * Informações enviadas ao banco de dados para validação *
+    e-mail + senha
+
+status-autenticação =
+    * Resultado do processo de verificação das credenciais *
+    [“válido” | “inválido”]
+
+resultado-login =
+    * Mensagem exibida ao usuário informando o resultado da autenticação *
+    [“Login realizado com sucesso” | “Usuário ou senha inválidos”]
+
+usuário =
+    * Representa as pessoas que acessam o sistema Adega *
+    [atendente | gerente | cliente]
+
+Usuários registrados =
+    * Armazenamento que contém os dados cadastrais dos usuários do sistema *
+    {@id-usuário + nome + e-mail + senha + tipo-usuário}
+
+domínio =
+    * Parte final do endereço de e-mail que identifica o servidor *
+    {caractere-válido} + "." + extensão
+
+caractere-válido =
+    [A-Z | a-z | 0-9 | _ | . | -]

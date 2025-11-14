@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.9">
+  <diagram name="Página-1" id="MODpHNiC8gxL2hidDi7y">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mstuWTALdUMKxbZ8l3h_-11" value="" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+          <mxGeometry x="195" y="202.5" width="205" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="mstuWTALdUMKxbZ8l3h_-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7uAQjGfJvz2Rm9QG7iGH-1" target="7uAQjGfJvz2Rm9QG7iGH-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7uAQjGfJvz2Rm9QG7iGH-1" value="Gerente" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mstuWTALdUMKxbZ8l3h_-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7uAQjGfJvz2Rm9QG7iGH-3" target="7uAQjGfJvz2Rm9QG7iGH-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7uAQjGfJvz2Rm9QG7iGH-3" value="Verificar Níveis de Estoque" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="265" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="mstuWTALdUMKxbZ8l3h_-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7uAQjGfJvz2Rm9QG7iGH-4" target="mstuWTALdUMKxbZ8l3h_-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7uAQjGfJvz2Rm9QG7iGH-4" value="Fazer pedido de reposição" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="265" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="mstuWTALdUMKxbZ8l3h_-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mstuWTALdUMKxbZ8l3h_-1" target="7uAQjGfJvz2Rm9QG7iGH-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mstuWTALdUMKxbZ8l3h_-1" value="Estoque" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="110" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mstuWTALdUMKxbZ8l3h_-2" value="Histórico de fornecedores" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="480" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mstuWTALdUMKxbZ8l3h_-7" value="Nome do produto, validade, quantidade" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="170" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mstuWTALdUMKxbZ8l3h_-10" value="Nome do produto, quantidade" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="242.5" y="430" width="110" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

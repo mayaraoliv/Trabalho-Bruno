@@ -1,0 +1,50 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.0.2">
+  <diagram name="Página-1" id="jEDpPXF5JH9KKSZVRb9T">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-15" value="" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+          <mxGeometry x="270" y="90" width="300" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="etkfwVLC3I7-tgAaZKt1-1" target="etkfwVLC3I7-tgAaZKt1-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-1" value="Gerente" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="60" y="200" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="etkfwVLC3I7-tgAaZKt1-2" target="etkfwVLC3I7-tgAaZKt1-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="etkfwVLC3I7-tgAaZKt1-2" target="etkfwVLC3I7-tgAaZKt1-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-2" value="Validar Dados do Funcionário" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+          <mxGeometry x="280" y="170" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="etkfwVLC3I7-tgAaZKt1-3" target="etkfwVLC3I7-tgAaZKt1-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-3" value="Registrar Funcionário no Sistema" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" vertex="1" parent="1">
+          <mxGeometry x="450" y="170" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="etkfwVLC3I7-tgAaZKt1-4" target="etkfwVLC3I7-tgAaZKt1-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-4" value="Funcionários registrados" style="html=1;dashed=0;whiteSpace=wrap;shape=partialRectangle;right=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="400" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-6" value="nome, e-mail, senha, CPF e função." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="180" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="etkfwVLC3I7-tgAaZKt1-9" value="nome, e-mail, senha, CPF e função." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="334" y="310" width="80" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

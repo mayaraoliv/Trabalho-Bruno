@@ -1,0 +1,63 @@
+solicitação-reposição-estoque =
+    * Requisição feita pelo gerente para iniciar a reposição de produtos *
+    id-gerente + análise-estoque + produtos-para-repor
+
+id-gerente =
+    * Identificador do gerente que está solicitando a reposição *
+    @id-gerente
+
+análise-estoque =
+    * Resultado da verificação dos níveis atuais de estoque *
+    {id-produto + nome-produto + quantidade-atual + quantidade-mínima + status-produto}
+
+id-produto =
+    * Identificador único do produto no sistema *
+    @id-produto
+
+nome-produto =
+    * Nome do produto analisado *
+    texto
+
+quantidade-atual =
+    * Quantidade atual disponível no estoque *
+    número-inteiro (≥ 0)
+
+quantidade-mínima =
+    * Quantidade mínima de segurança configurada para o produto *
+    número-inteiro (≥ 0)
+
+status-produto =
+    * Situação do produto conforme a análise de quantidade *
+    ["Normal" | "Baixo Estoque" | "Esgotado"]
+
+produtos-para-repor =
+    * Conjunto de produtos identificados como insuficientes *
+    {id-produto + quantidade-requerida + motivo-reposição}
+
+quantidade-requerida =
+    * Quantidade a ser reposta para atingir o nível mínimo desejado *
+    número-inteiro (≥ 1)
+
+ação-reposição =
+    * Registro da ação de reposição efetuada *
+    id-reposição + id-produto + quantidade-requerida + data-reposição + responsável
+
+id-reposição =
+    * Identificador do registro de reposição *
+    @id-reposição
+
+data-reposição =
+    * Data e hora em que a reposição foi realizada ou registrada *
+    dd + "/" + mm + "/" + aaaa + " " + hh + ":" + mm
+
+confirmação-reposição =
+    * Retorno do sistema após execução da reposição *
+    mensagem-sistema + status-reposição
+
+status-reposição =
+    * Situação atual da reposição *
+    ["Pendente" | "Finalizada"]
+
+Estoque =
+    * Base de dados contendo informações sobre os produtos e suas quantidades *
+    {@id-produto + nome-produto + quantidade-atual + quantidade-mínima + status-produto + data-atualizacao}

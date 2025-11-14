@@ -1,0 +1,69 @@
+solicitação-armazenamento =
+    * Requisição do Estoquista para registrar o local físico de armazenamento de um produto *
+    id-estoquista + dados-produto + destino-armazenamento + sessão + data-registro
+
+id-estoquista =
+    * Identificador único do estoquista autenticado no sistema *
+    @id-usuario
+
+dados-produto =
+    * Informações do produto que será armazenado *
+    id-produto + nome-produto + quantidade + unidade-medida + lote + validade
+
+id-produto =
+    * Código identificador do produto *
+    @id-produto
+
+nome-produto =
+    * Nome comercial do produto *
+    texto
+
+quantidade =
+    * Quantidade do produto a ser armazenada *
+    número-inteiro (≥ 0)
+
+lote =
+    * Código de identificação do lote de origem *
+    texto
+
+validade =
+    * Data de validade do produto (quando aplicável) *
+    dd + "/" + mm + "/" + aaaa
+
+destino-armazenamento =
+    * Local de destino físico onde o produto será armazenado *
+    ["Loja" | "Estoque"]
+
+sessão =
+    * Identificação da seção ou prateleira de armazenamento dentro do destino *
+    ["Bebidas" | "Comidas" | "Doces" | "Higiene" | "Limpeza" | "Outros"]
+
+data-registro =
+    * Data e hora do registro de armazenamento *
+    dd + "/" + mm + "/" + aaaa + " " + hh + ":" + mm
+
+registro-armazenamento =
+    * Estrutura completa que será gravada no banco de dados *
+    id-armazenamento + id-produto + destino-armazenamento + sessão + quantidade + validade + lote + data-registro + id-estoquista
+
+id-armazenamento =
+    * Identificador único do registro de armazenamento *
+    @id-armazenamento
+
+Estoque =
+    * Base de controle de quantidades gerais do estoque *
+    {@id-produto + quantidade-total + quantidade-loja + quantidade-estoque + data-atualizacao}
+
+relatorio-armazenamento =
+    * Documento ou tela que exibe os registros e movimentações de armazenamento realizadas *
+    {id-armazenamento + id-produto + destino-armazenamento + sessão + quantidade + data-registro + responsável}
+
+cargo =
+    * Cargo do funcionário (para auditoria) *
+    ["Estoquista" | "Gerente"]
+
+número-inteiro =
+    [0-9]+
+
+texto =
+    [A-Z | a-z | 0-9 | espaço | _ | - | . | ,]
